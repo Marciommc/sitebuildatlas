@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://buildatlas-preview.ssag.digital/sitemap.xml
+Sitemap: https://buildatlas-preview.ssagtecnologia.com/sitemap.xml
