@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Assinante | Build Atlas</title>
+    <meta name="description" content="Área interna de demonstração para assinantes da Build Atlas.">
+    <link rel="canonical" href="https://buildatlas.com.br/dashboard.html">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Dashboard do Assinante | Build Atlas">
+    <meta property="og:description" content="Área interna Build Atlas.">
+    <meta property="og:url" content="https://buildatlas.com.br/dashboard.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--bg-color);
+            height: auto;
+            display: block;
+        }
+
+        .dashboard-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .doc-list {
+            margin-top: 30px;
+        }
+
+        .doc-item {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .doc-item:hover {
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .doc-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .doc-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <header class="header" style="position: relative;">
+        <div class="container nav-container">
+            <div class="logo">Build Atlas<span>.</span></div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><span style="color: var(--text-secondary);">Olá, Cliente</span></li>
+                    <li><a href="#" id="logoutBtn" class="btn-nav">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <h2 style="font-family: var(--font-heading); margin-bottom: 10px;">Seus Documentos</h2>
+        <p style="color: var(--text-secondary);">Acesse aqui seus contratos, simulações e correspondências exclusivas.
+        </p>
+
+        <div class="doc-list" id="docList">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/supabase-client.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Load Documents
+        document.addEventListener('DOMContentLoaded', async () => {
+            const { data: docs } = await window.supabase.from('documents').select();
+            const container = document.getElementById('docList');
+
+            docs.forEach(doc => {
+                const div = document.createElement('div');
+                div.className = 'doc-item';
+                div.innerHTML = `
+                    <div class="doc-info">
+                        <i class="fas fa-file-pdf doc-icon"></i>
+                        <div>
+                            <h4 style="color: var(--text-primary); margin-bottom: 5px;">${doc.title}</h4>
+                            <span style="color: var(--text-secondary); font-size: 0.8rem;">Data: ${doc.date} • Status: ${doc.status}</span>
+                        </div>
+                    </div>
+                    <button class="btn-outline" style="padding: 8px 20px;">Baixar</button>
+                `;
+                container.appendChild(div);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Build Atlas</title>
+    <meta name="description" content="Acesso interno ao ambiente de demonstração da Build Atlas.">
+    <link rel="canonical" href="https://buildatlas.com.br/login.html">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Login | Build Atlas">
+    <meta property="og:description" content="Acesso interno ao ambiente Build Atlas.">
+    <meta property="og:url" content="https://buildatlas.com.br/login.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('img/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            background-color: var(--bg-light);
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .mock-notice {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card reveal active">
+        <div class="login-header">
+            <h2 style="font-family: var(--font-heading); font-size: 2rem; color: var(--text-primary);">
+                Build Atlas<span>.</span></h2>
+            <p style="color: var(--text-secondary);">Acesso ao Sistema</p>
+        </div>
+
+        <div class="mock-notice">
+            <i class="fas fa-info-circle"></i> <strong>Modo Demonstração</strong><br>
+            Admin: admin@exithus.com / 123<br>
+            Cliente: cliente@email.com / 123
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" required placeholder="seu@email.com">
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" required placeholder="******">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        </form>
+
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar ao Site</a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/supabase-client.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

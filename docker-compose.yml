@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  buildatlas-preview:
+    image: httpd:alpine
+    container_name: buildatlas-preview
+    restart: always
+    ports:
+      - "3010:80"
+    volumes:
+      - ./:/usr/local/apache2/htdocs/
