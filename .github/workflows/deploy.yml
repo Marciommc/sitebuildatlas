@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # 1. Entra na pasta do projeto no servidor (Crie esta pasta na VPS primeiro!)
-            cd /var/www/buildatlas-preview
+            cd /home/deploy/apps/buildatlas-preview
             
             # 2. Puxa as novidades do seu repositório oficial (Você precisará ter dado um git clone lá primeiro)
             git pull origin main
