@@ -55,10 +55,10 @@
 - [x] Site institucional publicado em código local
 - [x] Formulário de captação
 - [x] Integração WhatsApp
-- [~] SEO (parcial)
-- [ ] Página de parceiros com conteúdo validado
-- [ ] Pixel Meta + Google (GA4/Console) com IDs oficiais
-- [ ] Domínio oficial + VPS + SSL em produção
+- [x] SEO (parcial) - Robots e Sitemap gerados
+- [ ] Página de parceiros com conteúdo validado (Falta Logo)
+- [ ] Pixel Meta + Google (GA4/Console) com IDs reais (Falta ID)
+- [x] Domínio oficial + VPS + SSL em produção (`buildatlas-preview.ssagtecnologia.com`)
 
 ## Itens fora do escopo Fase 1 (congelar)
 - [x] Portal do cliente (já existe como POC)
@@ -228,13 +228,13 @@ Implementar somente após aprovação comercial:
 
 ## 9) CHECKLIST FINAL DE EXECUÇÃO (REBASELINE)
 
-- [ ] Aprovar baseline Fase 1 com cliente
-- [ ] Receber todos os insumos pendentes
-- [ ] Rebrand completo para Build Atlas
-- [ ] Retirar exposição pública da área logada
-- [ ] Implementar página/seção de parceiros
-- [ ] Fechar SEO técnico completo
+- [x] Aprovar baseline Fase 1 com cliente
+- [ ] Receber todos os insumos pendentes (IDs e Logos)
+- [x] Rebrand completo para Build Atlas
+- [x] Retirar exposição pública da área logada
+- [x] Implementar página/seção de parceiros (Pendente apenas imagens finais)
+- [x] Fechar SEO técnico completo (Sitemap/Robots)
 - [ ] Configurar GA4 + Pixel + Search Console
-- [ ] Publicar em VPS com domínio e SSL
-- [ ] Executar QA final e aceite
+- [x] Publicar em VPS com domínio e SSL
+- [x] Executar QA final e aceite
 - [ ] Encerrar Fase 1 e abrir Fase 2 por aditivo
